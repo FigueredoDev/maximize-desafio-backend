@@ -205,3 +205,29 @@ O `UpdateMateriaRequest` encapsula as regras de validação aplicáveis às soli
 ### Considerações Especiais
 
 - **Ausência do Campo `Imagem`**: Nota-se que, diferentemente do `StoreMateriaRequest`, o campo `imagem` não é incluído neste conjunto de validações. Isso reflete a decisão de tratar atualizações de imagens através de um endpoint separado, otimizando a manipulação de uploads de arquivos e separando a lógica de atualização de dados textuais da manipulação de arquivos binários.
+
+## Melhorias Futuras
+
+Embora o projeto já ofereça um conjunto robusto de funcionalidades, há sempre espaço para aprimoramentos e adições que podem enriquecer ainda mais a aplicação. Algumas das áreas identificadas para melhorias futuras incluem:
+
+### Testes Unitários e de Integração
+
+- **Cobertura de Testes**: Ampliar a cobertura de testes unitários e de integração para garantir a confiabilidade e a qualidade do código. Isso inclui testar todas as operações CRUD, validações, e comportamentos específicos do domínio da aplicação.
+
+- **Automatização de Testes**: Implementar uma pipeline CI/CD que inclua a execução automatizada de testes a cada push ou pull request, ajudando a identificar e corrigir regressões mais rapidamente.
+
+### Segurança
+
+- **Autenticação e Autorização**: Reforçar a segurança da aplicação implementando ou expandindo sistemas de autenticação e autorização, assegurando que apenas usuários autorizados possam criar, atualizar ou excluir matérias.
+
+- **Auditoria**: Implementar logs de auditoria para rastrear as alterações feitas nas matérias, incluindo quem fez a mudança e quando.
+
+### Recursos Adicionais
+
+- **Comentários e Avaliações**: Adicionar a capacidade de usuários deixarem comentários ou avaliações em cada matéria, aumentando a interatividade e o engajamento na plataforma.
+
+- **APIs de Terceiros**: Integrar com APIs de terceiros para enriquecer as matérias com informações adicionais ou para compartilhar as matérias em redes sociais diretamente da aplicação.
+
+## Conclusão
+
+O projeto já alcançou vários marcos importantes, estabelecendo uma base sólida sobre a qual podemos construir. As melhorias sugeridas visam não apenas aprimorar a funcionalidade e a segurança da aplicação, mas também garantir uma experiência de usuário superior e facilitar a manutenção e expansão futuras do projeto.
