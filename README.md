@@ -8,6 +8,8 @@ Clone Repositório
 git clone https://github.com/FigueredoDev/maximize-desafio-backend
 ```
 
+Acesse a pasta
+
 ```sh
 cd maximize-desafio-backend
 ```
@@ -54,14 +56,28 @@ Instale as dependências do projeto
 docker-compose exec app composer install
 ```
 
+Gere a key do projeto Laravel
+
+```sh
+docker-compose exec app php artisan key:generate
+```
+
 Execute as migrações
 
 ```sh
 docker-compose exec app php artisan migrate
 ```
 
-Gere a key do projeto Laravel
+Criar o Link Simbólico para o Storage
+Para servir arquivos de imagem e outros arquivos estáticos corretamente, crie um link simbólico do diretório public/storage para storage/app/public:
 
 ```sh
-docker-compose exec app php artisan key:generate
+docker-compose exec app php artisan storage:link
+```
+
+Executar Migrações e Seeders
+Crie as tabelas no banco de dados e popule-as com dados iniciais usando:
+
+```sh
+docker-compose exec app php artisan db:seed --class=MateriaTableSeeder
 ```
