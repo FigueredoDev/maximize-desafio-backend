@@ -82,9 +82,15 @@ Crie as tabelas no banco de dados e popule-as com dados iniciais usando:
 docker-compose exec app php artisan db:seed --class=MateriaTableSeeder
 ```
 
+## Acesse 
+
+```sh
+http://locahost:8989/api/materias
+```
+
 ## Documentação das Rotas da API
 
-### 1. Listar Todas as Matérias (`GET /materias`)
+### 1. Listar Todas as Matérias (`GET api/materias`)
 
 Este endpoint retorna uma lista paginada de todas as matérias cadastradas na aplicação. A resposta inclui os principais campos de cada matéria, exceto o `texto_completo`, organizados em páginas para facilitar a navegação e melhorar a performance ao lidar com grandes volumes de dados.
 
@@ -130,7 +136,7 @@ Os dados são paginados para otimizar o carregamento e a visualização. Cada p�
 }
 ```
 
-### 2. Obter Matéria por ID (`GET /materias/{id}`)
+### 2. Obter Matéria por ID (`GET api/materias/{id}`)
 
 Para obter os detalhes de uma matéria específica, incluindo o `texto_completo`, envie uma requisição `GET` para `/materias/{id}`, substituindo `{id}` pelo identificador único da matéria desejada.
 
@@ -147,12 +153,12 @@ Para obter os detalhes de uma matéria específica, incluindo o `texto_completo`
 }
 ```
 
-### 3. Criação de Matéria (`DELETE /materias/{id}`)
+### 3. Criação de Matéria (`DELETE api/materias/{id}`)
 
 Cria uma nova instância de `Materia`.
 
 -   **Método HTTP**: `POST`
--   **URL**: `/materias`
+-   **URL**: `api/materias`
 -   **Corpo da Requisição**: `multipart/form-data` contendo:
     -   `titulo` (string, obrigatório)
     -   `descricao` (string, obrigatório)
@@ -160,30 +166,30 @@ Cria uma nova instância de `Materia`.
     -   `texto_completo` (string, obrigatório)
     -   `data_de_publicacao` (date, obrigatório)
     
-### 4. Atualização de `Materia` (`PUT /materias/{id}`)
+### 4. Atualização de `Materia` (`PUT api/materias/{id}`)
 
 Atualiza uma instância específica de `Materia`, excluindo a imagem.
 
 -   **Método HTTP**: `PUT`
--   **URL**: `/materias/{id}`
+-   **URL**: `api/materias/{id}`
 -   **Corpo da Requisição**: `multipart/form-data` com campos opcionais (somente os campos a serem atualizados precisam ser enviados):
     -   `titulo` (string, opcional)
     -   `descricao` (string, opcional)
     -   `texto_completo` (string, opcional)
     -   `data_de_publicacao` (date, opcional)
 
-### 5. Atualização da Imagem de `Materia` (`POST /materias/{id}/imagem`)
+### 5. Atualização da Imagem de `Materia` (`POST api/materias/{id}/imagem`)
 
 Atualiza apenas a imagem de uma instância específica de `Materia`.
 
 -   **Método HTTP**: `POST`
--   **URL**: `/materias/{id}/imagem`
+-   **URL**: `api/materias/{id}/imagem`
 -   **Corpo da Requisição**: `multipart/form-data` contendo:
     -   `imagem` (file, obrigatório)
 
-### 6. Excluir Matéria (`DELETE /materias/{id}`)
+### 6. Excluir Matéria (`DELETE api/materias/{id}`)
 -   **Método HTTP**: `DELETE`
--   **URL**: `/materias/{id}`
+-   **URL**: `api/materias/{id}`
 
 Para excluir uma matéria específica, envie uma requisição `DELETE` para `/materias/{id}`, substituindo `{id}` pelo identificador único da matéria que deseja excluir. Essa operação não tem corpo de resposta, e um código de status `204 No Content` é tipicamente retornado em caso de sucesso.
 
