@@ -85,7 +85,7 @@ docker-compose exec app php artisan db:seed --class=MateriaTableSeeder
 ## Acesse 
 
 ```sh
-http://locahost:8989/api/materias
+http://localhost:8989/api/materias
 ```
 
 ## Documentação das Rotas da API
