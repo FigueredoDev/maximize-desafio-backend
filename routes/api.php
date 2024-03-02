@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\MateriaController;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +19,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
 Route::get('/', function () {
     return response()->json(['message' => 'Hello World!']);
 });
+
+Route::apiResource('materias', MateriaController::class);
+Route::post('/materias/{id}/imagem', [MateriaController::class, 'updateImage'])->name('materias.updateImage');
