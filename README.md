@@ -153,7 +153,7 @@ Para obter os detalhes de uma matéria específica, incluindo o `texto_completo`
 }
 ```
 
-### 3. Criação de Matéria (`DELETE api/materias/{id}`)
+### 3. Criação de Matéria (`POST api/materias/{id}`)
 
 Cria uma nova instância de `Materia`.
 
